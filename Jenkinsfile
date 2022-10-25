@@ -5,7 +5,8 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh 'npm install'
-                sh 'forever start src/index.js'
+                // sh 'forever start src/index.js'
+                sh 'nohup npm start &'
             }
         }
     }
