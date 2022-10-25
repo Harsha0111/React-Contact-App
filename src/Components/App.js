@@ -5,16 +5,14 @@ import ContactList from "./ContactList";
 
 const App = () => {
   const LOCAL_STORAGE_KEY = "contacts";
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState(() => {
+    return JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || []
+  });
 
   const addContactHandler = (contact) => {
     setContacts([...contacts, { id: contacts.length + 1, ...contact }]);
   };
 
-  useEffect(() => {
-    const retieveContacts = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-    if (retieveContacts) setContacts(retieveContacts);
-  }, []);
   const removeContactHandler = (id) => {
     const newContactList = contacts.filter((contact) => {
       return contact.id !== id;
