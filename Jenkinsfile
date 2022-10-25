@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                npm start
+                sh 'npm start'
             }
         }
     }

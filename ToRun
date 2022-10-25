@@ -1,0 +1,3 @@
+cd C:\bin
+relay-windows-amd64.exe login -k fc2a7ac7-5070-4369-9841-7a666d48423d -s bahiAWJGxiRp
+relay-windows-amd64.exe forward --bucket github-jenkins http://localhost:8080/github-webhook/
