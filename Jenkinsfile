@@ -4,17 +4,18 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+                npm start
             }
         }
-        stage('Test') {
+        stage('Email') {
             steps {
-                echo 'Testing..'
+                emailext body: 'A Test EMail', to:'selviharsha@gmail.com',from:'harshajsharsh@gmail.com',subject: 'Test'
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
+    }
+    post {
+        always {
+            emailext body: 'A Test EMail', to:'selviharsha@gmail.com',from:'harshajsharsh@gmail.com',subject: 'Test'
         }
     }
 }
