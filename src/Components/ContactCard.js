@@ -1,7 +1,7 @@
 import React from "react";
 import user from "../Images/user.png";
 
-const ContactCard = ({ contact }) => {
+const ContactCard = ({ contact,clickHandler }) => {
   const { id, name, email } = contact;
   return (
     <div className="item">
@@ -12,7 +12,7 @@ const ContactCard = ({ contact }) => {
          <i
         className="trash alternate outline icon"
         style={{ color: "red", marginTop: "7px" }}
-        onClick = {() => props.clickHandler(id)}
+        onClick = {() => clickHandler(id)}
       ></i>
      
       </div>
