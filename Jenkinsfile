@@ -8,7 +8,8 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh 'npm install'
-                bat '\\node_modules\\.bin\\pm2 serve build 3000 --spa'
+                sh 'npm i -g pm2'
+                sh 'pm2 serve build 3000 --spa'
             }
         }
     }
