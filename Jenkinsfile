@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh 'npm install'
-                sh '\node_modules\\.bin\pm2 serve build 3000 --spa'
+                sh '\\node_modules\\.bin\\pm2 serve build 3000 --spa'
             }
         }
     }
